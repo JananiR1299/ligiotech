@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Box, Grid, Typography, IconButton, Container } from '@mui/material';
-import { Facebook, Twitter,  Instagram, Call, Email } from '@mui/icons-material';
+import { Facebook, Twitter, Instagram, Call, Email } from '@mui/icons-material';
 
 const Footer = () => {
   const footerRef = useRef(null);
@@ -15,13 +15,14 @@ const Footer = () => {
       { threshold: 0.1 } // Adjust the threshold as needed
     );
 
-    if (footerRef.current) {
-      observer.observe(footerRef.current);
+    const currentFooterRef = footerRef.current;
+    if (currentFooterRef) {
+      observer.observe(currentFooterRef);
     }
 
     return () => {
-      if (footerRef.current) {
-        observer.unobserve(footerRef.current);
+      if (currentFooterRef) {
+        observer.unobserve(currentFooterRef);
       }
     };
   }, []);
@@ -32,7 +33,7 @@ const Footer = () => {
       ref={footerRef}
       sx={{
         position: 'relative',
-        width: '98.8vw',
+        width: '100vw',
         backgroundColor: '#3586ff',
         paddingTop: '120px',
         paddingBottom: '50px',

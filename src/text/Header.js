@@ -32,9 +32,9 @@ const FiveMillion = () => {
   const [ setLoading] = useState(true); // State to manage loading
 
   // Simulate loading effect
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 3000); // Loader shows for 3 seconds
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => setLoading(false), 3000); // Loader shows for 3 seconds
+  // }, []);
 
   // Render loader while loading is true
   // if (loading) {
