@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Typography, Button, Box } from '@mui/material';
 import { keyframes } from '@mui/system';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -29,7 +29,7 @@ const fadeIn = keyframes`
 `;
 
 const FiveMillion = () => {
-  const [ setLoading] = useState(true); // State to manage loading
+  // const [ setLoading] = useState(true); // State to manage loading
 
   // Simulate loading effect
   // useEffect(() => {
