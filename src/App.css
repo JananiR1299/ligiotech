@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Light background */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  height: 100vh; /* Full viewport height */
+  padding: 20px; /* Spacing around the content */
+}
+
+.overlay-text {
+  flex: 1; /* This will take available space */
+  max-width: 400px; /* Max width for the text overlay */
+  color: #343a40; /* Dark text color */
+}
+
+.overlay-text h1 {
+  font-size: 48px; /* Large heading */
+  /* margin-bottom: 10px;  */
+}
+.overlay-text p {
+  font-size: 18px; /* Standard paragraph sizezz */
+  margin-bottom: 20px; /* Space below paragraph */
+}
+
+.cta-button {
+  padding: 10px 20px;
+  font-size: 16px;
   color: white;
+  background-color: #007bff; /* Blue button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.cta-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.scene-container {
+  flex: 1; /* This will take available space */
+  height: 100%; /* Ensure it takes full height */
 }

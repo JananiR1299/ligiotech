@@ -1,0 +1,34 @@
+/* Loader.css */
+.loader-container {
+    height: 100vh;
+    width: 100%; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0053B5, #81D1FF); /* Similar background gradient */
+  }
+  
+  .loader-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .loader-icon img {
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite; /* Infinite spin animation */
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
