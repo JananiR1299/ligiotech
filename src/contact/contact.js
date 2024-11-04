@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Grid, Typography, TextField, Button, IconButton, Paper } from '@mui/material';
 import { Facebook, Twitter, Instagram, LinkedIn, LocationOn, Email, Phone } from '@mui/icons-material';
 import NavBar from '../NavBar/Bar';
-import Footer from '../Footer/Footer';
+// import Footer from '../Footer/Footer';
 
 const Contact = () => {
 

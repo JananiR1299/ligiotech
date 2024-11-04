@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Box, Grid, Typography, IconButton, Container } from '@mui/material';
-import { Facebook, Twitter, LinkedIn, Instagram, Call, Email } from '@mui/icons-material';
+import { Facebook, Twitter,  Instagram, Call, Email } from '@mui/icons-material';
 
 const Footer = () => {
   const footerRef = useRef(null);

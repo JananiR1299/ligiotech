@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Button, Box, AppBar } from '@mui/material';
+import { Typography, Button, Box } from '@mui/material';
 import { keyframes } from '@mui/system';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Footer from './Footer';
 import ligiologo from '../ligiotech logo secondary .png';
-import Loader from './Loader'; // Import the Loader component
+// import Loader from './Loader'; // Import the Loader component
 import NavBar from '../NavBar/Bar';
 // import Footer from '../Footer/Footer';
 // Define keyframes for animation
@@ -29,7 +29,7 @@ const fadeIn = keyframes`
 `;
 
 const FiveMillion = () => {
-  const [loading, setLoading] = useState(true); // State to manage loading
+  const [ setLoading] = useState(true); // State to manage loading
 
   // Simulate loading effect
   useEffect(() => {
