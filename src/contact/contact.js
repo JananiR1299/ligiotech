@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Grid, Typography, TextField, Button, IconButton, Paper } from '@mui/material';
 import { Facebook, Twitter, Instagram, LinkedIn, LocationOn, Email, Phone } from '@mui/icons-material';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import NavBar from '../NavBar/Bar';
 // import Footer from '../Footer/Footer';
 
 const Contact = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1500 });
+    }, []);
 
     return (
-        
         <Box sx={{ backgroundColor: '#fff', minHeight: '100vh', py: 5, px: 2 }}>
             <NavBar />
             <Grid container spacing={4} justifyContent="center">
+                
                 {/* Contact Information Card */}
-                <Grid item xs={12} md={5} sx={{ display: 'flex' }}>
+                <Grid item xs={12} md={5} sx={{ display: 'flex' }} data-aos="fade-right">
                     <Paper
                         elevation={3}
                         sx={{
@@ -22,7 +27,7 @@ const Contact = () => {
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
-                            flexGrow: 1, // Makes both cards equal height
+                            flexGrow: 1,
                             transition: 'transform 0.3s, box-shadow 0.3s',
                             '&:hover': {
                                 transform: 'scale(1.05)',
@@ -69,13 +74,13 @@ const Contact = () => {
                 </Grid>
 
                 {/* Contact Form Card */}
-                <Grid item xs={12} md={5} sx={{ display: 'flex' }}>
+                <Grid item xs={12} md={5} sx={{ display: 'flex' }} data-aos="fade-left">
                     <Paper
                         elevation={3}
                         sx={{
                             p: 4,
                             backgroundColor: '#fff',
-                            flexGrow: 1, // Makes both cards equal height
+                            flexGrow: 1,
                             transition: 'transform 0.3s, box-shadow 0.3s',
                             '&:hover': {
                                 transform: 'scale(1.05)',

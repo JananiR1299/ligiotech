@@ -33,7 +33,7 @@ const Footer = () => {
       ref={footerRef}
       sx={{
         position: 'relative',
-        width: '100vw',
+        width: '98vw',
         backgroundColor: '#3586ff',
         paddingTop: '120px',
         paddingBottom: '50px',
@@ -56,7 +56,7 @@ const Footer = () => {
           top: 0,
           left: 0,
           zIndex: 2,
-          backgroundColor: 'rgba(157, 161, 158, 0.5)',
+          backgroundColor: 'black',
           '&::before, &::after': {
             content: '""',
             position: 'absolute',
@@ -67,11 +67,11 @@ const Footer = () => {
             zIndex: 1,
           },
           '&::before': {
-            animation: 'animateWave 10s linear infinite',
+            animation: 'animateWave 12s linear infinite',
             opacity: 1,
           },
           '&::after': {
-            animation: 'animateWave 8s linear infinite reverse',
+            animation: 'animateWave 10s linear infinite reverse',
             opacity: 0.7,
           },
           '@keyframes animateWave': {
@@ -104,7 +104,7 @@ const Footer = () => {
 
         {/* Footer Bottom Text */}
         <Typography sx={{ color: '#eee', textAlign: 'center', mt: 3, fontSize: '1.1em' }}>
-          &copy;2021 Prakash Sahu | All Rights Reserved
+          &copy;2021 LigioTech | All Rights Reserved
         </Typography>
       </Container>
     </Box>
@@ -130,3 +130,96 @@ const iconStyles = {
 };
 
 export default Footer;
+
+// import React from 'react';
+// import { Box, Typography, Button, Link } from '@mui/material';
+// import { SvgIcon } from '@mui/material';
+
+// const Footer = () => {
+//   return (
+//     <Box sx={{ backgroundColor: '#1976d2', color: '#fff' }}>
+//       <footer>
+//         {/* Wave SVG */}
+//         <SvgIcon sx={{ display: 'block', width: '100%', height: '100%' }} viewBox="0 0 1200 100" preserveAspectRatio="none">
+//           <path
+//             d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"
+//           />
+//         </SvgIcon>
+
+//         <Box display="flex" justifyContent="space-between" flexWrap="wrap" padding={2}>
+//           <Box flex={1} padding={1}>
+//             <Link href="#" sx={{ textDecoration: 'none', color: '#fff' }}>
+//               <Typography variant="h5">LOGO</Typography>
+//             </Link>
+//             <Box marginTop={2}>
+//               <Typography variant="h6">Get Started</Typography>
+//               <ul style={{ padding: 0, listStyle: 'none', margin: 0 }}>
+//                 {['Start', 'Documentation', 'Installation'].map((item, index) => (
+//                   <li key={index}>
+//                     <Link href="#" sx={{ textDecoration: 'none', color: '#fff' }}>{item}</Link>
+//                   </li>
+//                 ))}
+//               </ul>
+//             </Box>
+//           </Box>
+
+//           <Box flex={1} padding={1}>
+//             <Typography variant="h6">Company</Typography>
+//             <ul style={{ padding: 0, listStyle: 'none', margin: 0 }}>
+//               {['Contact', 'News', 'Careers'].map((item, index) => (
+//                 <li key={index}>
+//                   <Link href="#" sx={{ textDecoration: 'none', color: '#fff' }}>{item}</Link>
+//                 </li>
+//               ))}
+//             </ul>
+//             <Typography variant="h6" marginTop={2}>Legal</Typography>
+//             <ul style={{ padding: 0, listStyle: 'none', margin: 0 }}>
+//               {['Privacy Notice', 'Terms of Use'].map((item, index) => (
+//                 <li key={index}>
+//                   <Link href="#" sx={{ textDecoration: 'none', color: '#fff' }}>{item}</Link>
+//                 </li>
+//               ))}
+//             </ul>
+//           </Box>
+
+//           <Box flex={1} padding={1}>
+//             <Typography variant="h6">Quick Links</Typography>
+//             <ul style={{ padding: 0, listStyle: 'none', margin: 0 }}>
+//               {['Support Center', 'Service Status', 'Security', 'Blog', 'Customers', 'Reviews'].map((item, index) => (
+//                 <li key={index}>
+//                   <Link href="#" sx={{ textDecoration: 'none', color: '#fff' }}>{item}</Link>
+//                 </li>
+//               ))}
+//             </ul>
+//           </Box>
+
+//           <Box flex={1} padding={1}>
+//             <Typography variant="h6">Let's Chat</Typography>
+//             <Typography>Have a support question?</Typography>
+//             <Link href="#" sx={{ textDecoration: 'none' }}>
+//               <Button variant="contained" sx={{ marginTop: 1, backgroundColor: '#fff', color: '#1976d2' }}>Get in Touch</Button>
+//             </Link>
+//             <Typography variant="h6" marginTop={2}>You Call Us</Typography>
+//             <Link href="tel:0124-64XXXX" sx={{ textDecoration: 'none', color: '#fff' }}>
+//               <Typography>0124-64XXXX</Typography>
+//             </Link>
+//           </Box>
+//         </Box>
+
+//         <Box display="flex" justifyContent="center" padding={2}>
+//           {/* Social Media Icons */}
+//           {['Linkedin', 'Twitter', 'Youtube'].map((platform, index) => (
+//             <Link key={index} href="#" sx={{ margin: '0 10px', textDecoration: 'none', display: 'flex', alignItems: 'center', color: '#fff' }} target="_blank">
+//               <SvgIcon sx={{ width: 24, height: 24 }}>
+//                 {/* Placeholder for social icon paths */}
+//               </SvgIcon>
+//               <Typography variant="body2" sx={{ marginLeft: 0.5 }}>{platform}</Typography>
+//             </Link>
+//           ))}
+//         </Box>
+//       </footer>
+//     </Box>
+//   );
+// };
+
+// export default Footer;

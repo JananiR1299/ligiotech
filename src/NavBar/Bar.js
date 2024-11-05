@@ -38,81 +38,89 @@ function NavBar(props) {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  
+
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
- 
+
 
   return (
     <ShowOnScroll {...props}>
       <AppBar position="fixed" sx={{ backgroundColor: '#1976d2', boxShadow: 'none' }}>
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <Box
-              component="img"
-              src={ligiologo}
-              alt="logoimage"
-              sx={{
-                width: '110px',
-                height: 'auto',
-                marginRight: '20px',
+        {/* <Container maxWidth="xl"> */}
+        <Toolbar disableGutters>
+          <Box
+            component="img"
+            src={ligiologo}
+            alt="logoimage"
+            sx={{
+              width: '110px',
+              height: 'auto',
+              marginRight: '40px',
+              marginLeft:'40px',
+            }}
+          />
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="menu"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
               }}
-            />
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-              <IconButton
-                size="large"
-                aria-label="menu"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{ display: { xs: 'block', md: 'none' } }}
-              >
-                {pages.map((page) => (
-                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                    <Link to={page.path} style={{ textDecoration: 'none', color: 'inherit' }}>
-                      <Typography textAlign="center">{page.name}</Typography>
-                    </Link>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-            
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{ display: { xs: 'block', md: 'none' } }}
+            >
               {pages.map((page) => (
-                <Button
-                  key={page.name}
-                  onClick={handleCloseNavMenu}
-                  component={Link}
-                  to={page.path} // Use the Link component
-                  sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                  {page.name}
-                </Button>
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Link to={page.path} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <Typography textAlign="center">{page.name}</Typography>
+                  </Link>
+                </MenuItem>
               ))}
-            </Box>
-          </Toolbar>
-        </Container>
+            </Menu>
+          </Box>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'none', md: 'flex' },
+              // width: { md: '80%', lg: '50%' }, // Adjusts width on medium and large screens
+              // justifyContent: 'center', // Center aligns the buttons within the Box
+            }}
+          >
+            {pages.map((page) => (
+              <Button
+                key={page.name}
+                onClick={handleCloseNavMenu}
+                component={Link}
+                to={page.path}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {page.name}
+              </Button>
+            ))}
+          </Box>
+
+        </Toolbar>
+        {/* </Container> */}
       </AppBar>
     </ShowOnScroll>
   );

@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Animation from './Animation';
 import About from './about/about';
 import Contact from './contact/contact';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init();
 
 
 const App = () => {

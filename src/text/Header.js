@@ -51,7 +51,7 @@ const FiveMillion = () => {
         padding: '50px',
         borderRadius: '0',
         color: 'white',
-        background: 'linear-gradient(135deg,#0c4a9c 0%,#cbe5f2 100%) #0c4a9c',
+        background: 'linear-gradient(135deg,#1976d2 0%,#cbe5f2 100%) #0c4a9c',
         fontFamily: 'Mulish, sans-serif',
         // position: 'absolute',
         top: 0,

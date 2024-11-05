@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Container, Grid, Typography, Paper } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { faAngellist } from '@fortawesome/free-brands-svg-icons';
-
+import NavBar from '../NavBar/Bar';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const About = () => {
+
+    useEffect(() => {
+        AOS.init({ duration: 1500 });
+    }, []);
+
     return (
         <Box
             id="about"
@@ -14,6 +21,9 @@ const About = () => {
                 minHeight: '100vh',
             }}
         >
+
+            <NavBar />
+
             <style>
                 {`
                     @keyframes fadeSlideUp {
@@ -22,16 +32,15 @@ const About = () => {
                     }
                 `}
             </style>
+
             <Container>
                 {/* Section Title */}
                 <Grid container justifyContent="center">
-                    <Grid item xs={12}>
+                    <Grid item xs={12} data-aos="zoom-in">
                         <Box
                             textAlign="center"
                             mb={5}
-                            sx={{
-                                animation: 'fadeSlideUp 2s ease forwards',
-                            }}
+
                         >
                             <Typography variant="h4" fontWeight="bold">
                                 <Box component="span" sx={{ color: '#1976d2' }}>
@@ -40,12 +49,12 @@ const About = () => {
                             </Typography>
                             <Typography
                                 variant="subtitle1"
-                                color="textSecondary"
-                                sx={{ maxWidth: '550px', mx: 'auto', lineHeight: 1.6 }}
+                                color="black"
+                                sx={{ maxWidth: '550px', mx: 'auto', lineHeight: 1.6, }}
                             >
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                <br />
-                                Lorem Ipsum has been the industry's standard dummy text.
+                                Welcome to Ligiotech — where innovation meets craftsmanship in software development.
+                                As a dedicated development company, we specialize in creating custom software solutions that empower businesses to excel in their respective fields.
+                                Our commitment to quality and client satisfaction drives us to stay at the forefront of technology, offering solutions that are efficient, scalable, and tailored to our clients' unique needs.
                             </Typography>
                         </Box>
                     </Grid>
@@ -54,25 +63,20 @@ const About = () => {
                 {/* About Content */}
                 <Grid container spacing={5} alignItems="center">
                     <Grid item xs={12} md={6}>
-                        <Box sx={{ animation: 'fadeSlideUp 1s ease forwards' }}>
+                        <Box data-aos="fade-up">
                             <Typography variant="h5" sx={{ color: '#1976d2', fontWeight: 'bold' }}>
-                                Lorem Ipsum is simply dummy text
+                                Who We Are
                             </Typography>
-                            <Typography variant="h6" sx={{ color: '#2c3145', fontWeight: 'bold', mt: 2 }}>
-                                Lorem Ipsum is simply dummy text of the printing industry.
+                            <Typography variant="h6" sx={{ color: '#2c3145', mt: 2 }}>
+                                At Ligiotech, we are a team of passionate technologists, designers, and developers with a shared vision: to turn complex problems into streamlined digital experiences.
+                                We believe that technology is a powerful tool that, when implemented correctly, can transform businesses and lives.
+                                Our expertise spans across a wide range of industries, including SaaS, e-commerce, healthcare, and finance, allowing us to bring a well-rounded perspective to every project we undertake.
                             </Typography>
-                            <Typography variant="body1" color="textSecondary" mt={3}>
-                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece
-                                of classical Latin literature from 45 BC, making it over 2000 years old.
-                            </Typography>
-                            <Typography variant="body1" color="textSecondary" mt={3}>
-                                Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one
-                                of the more obscure Latin words, consectetur, from a Lorem Ipsum passage.
-                            </Typography>
+
                         </Box>
                     </Grid>
-                    <Grid item xs={12} md={6}>
-                        <Box display="flex" justifyContent="center" sx={{ animation: 'fadeSlideUp 1s ease forwards' }}>
+                    <Grid item xs={12} md={6} data-aos="flip-right">
+                        <Box display="flex" justifyContent="center"   >
                             <img
                                 src="https://i.ibb.co/qpz1hvM/About-us.jpg"
                                 alt="About us"
@@ -82,21 +86,79 @@ const About = () => {
                     </Grid>
                 </Grid>
 
+                <Grid container spacing={5} alignItems="center">
+                    <Grid item xs={12} md={6} mt={5} mb={2} data-aos="flip-right">
+                        <Box display="flex" justifyContent="center"   >
+                            <img
+                                src="https://i.ibb.co/qpz1hvM/About-us.jpg"
+                                alt="About us"
+                                style={{ width: '100%', maxWidth: '450px', borderRadius: '8px' }}
+                            />
+                        </Box>
+
+                    </Grid>
+                    <Grid item xs={12} md={6} >
+                        <Box data-aos="fade-up">
+                            <Typography variant="h5" sx={{ color: '#1976d2', fontWeight: 'bold' }}>
+                                Our Mission
+                            </Typography>
+                            <Typography variant="h6" sx={{ color: '#2c3145', mt: 2 }}>
+                                Our mission is to deliver exceptional digital solutions that align with our clients' goals and push the boundaries of what’s possible.
+                                We take pride in combining creativity, technological expertise, and a deep understanding of industry trends to build solutions that are not only functional but also future-proof.
+                            </Typography>
+
+                        </Box>
+                    </Grid>
+                </Grid>
                 {/* Feature Boxes */}
-                <Grid container spacing={3} mt={5}>
-                    {[{ icon: faPencilAlt, title: "Creative Design" }, { icon: faAngellist, title: "We make Best Result" }, { icon: faPaperPlane, title: "Best Platform" }].map((feature, index) => (
+                <Box display="flex" justifyContent="center" mt={5} mb={2}>
+                    <Typography variant="h4" fontWeight="bold" align="center">
+                        <Box component="span" sx={{ color: '#1976d2' }}>
+                            What We Do
+                        </Box>
+                    </Typography>
+                </Box>
+
+                <Grid container spacing={3} mt={5} data-aos="fade-down">
+                    {[
+                        {
+                            icon: faPencilAlt,
+                            title: "Custom Software Development",
+                            content: "We create solutions from scratch, tailored to your specific business requirements, using the latest technology stacks."
+                        },
+                        {
+                            icon: faAngellist,
+                            title: "Web and Mobile Applications",
+                            content: "Our team designs and develops seamless web and mobile applications that deliver exceptional user experiences."
+                        },
+                        {
+                            icon: faPaperPlane,
+                            title: "Enterprise Solutions",
+                            content: "We build scalable and secure enterprise-grade software that helps organizations operate more efficiently."
+                        },
+                        {
+                            icon: faPaperPlane,
+                            title: "Cloud Solutions",
+                            content: "Leverage our cloud solutions to boost flexibility and accessibility while ensuring secure data storage and management."
+                        },
+                        {
+                            icon: faPaperPlane,
+                            title: "Consulting and Support",
+                            content: "Our experts offer consulting services and ongoing support to ensure your technology is optimized and future-ready."
+                        }
+                    ].map((feature, index) => (
                         <Grid item xs={12} md={4} key={index}>
                             <Paper
                                 elevation={3}
                                 sx={{
                                     p: 4,
                                     textAlign: 'center',
+                                    flexGrow: 1,
+                                    transition: 'transform 0.3s, box-shadow 0.3s',
                                     '&:hover': {
-                                        boxShadow: 6,
                                         transform: 'scale(1.05)',
-                                        transition: 'transform 0.3s',
+                                        boxShadow: 6,
                                     },
-                                    animation: 'fadeSlideUp 1s ease forwards',
                                 }}
                             >
                                 <Box
@@ -120,12 +182,13 @@ const About = () => {
                                     {feature.title}
                                 </Typography>
                                 <Typography color="textSecondary" mt={2}>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                    {feature.content}
                                 </Typography>
                             </Paper>
                         </Grid>
                     ))}
                 </Grid>
+
             </Container>
         </Box>
     );
