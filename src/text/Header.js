@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Typography, Button, Box } from '@mui/material';
 import { keyframes } from '@mui/system';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -6,6 +6,8 @@ import Footer from './Footer';
 import ligiologo from '../ligiotech logo secondary .png';
 // import Loader from './Loader'; // Import the Loader component
 import NavBar from '../NavBar/Bar';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 // import Footer from '../Footer/Footer';
 // Define keyframes for animation
 const slideUp = keyframes`
@@ -29,6 +31,10 @@ const fadeIn = keyframes`
 `;
 
 const FiveMillion = () => {
+
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+}, []);
   // const [ setLoading] = useState(true); // State to manage loading
 
   // Simulate loading effect
@@ -67,15 +73,16 @@ const FiveMillion = () => {
         component="img"
         src={ligiologo}
         alt="logoimage"
+        data-aos="fade-up"
         sx={{
           marginBottom: '20px',
           width: '110px',
           height: 'auto',
           marginRight: '20px',
-          animation: `${slideUp} 1s ease-out`,
-          animationDelay: '0.2s',
+          // animation: `${slideUp} 1s ease-out`,
+          // animationDelay: '0.2s',
           opacity: 0,
-          animationFillMode: 'forwards',
+          // animationFillMode: 'forwards',
         }}
       />
 

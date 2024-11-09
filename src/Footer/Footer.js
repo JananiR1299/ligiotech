@@ -9,7 +9,7 @@ const Footer = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          entry.target.style.animation = 'fadeSlideUp 2.5s ease-out forwards';
+          entry.target.style.animation = 'fadeSlideUp 1.5s ease-out forwards';
         }
       },
       { threshold: 0.1 } // Adjust the threshold as needed
@@ -37,7 +37,7 @@ const Footer = () => {
         backgroundColor: '#3586ff',
         paddingTop: '120px',
         paddingBottom: '50px',
-        mt: 8,
+        // mt: 8,
         overflow: 'hidden',
         fontFamily: 'Poppins, sans-serif',
         opacity: 0, // Initial opacity for fade effect
@@ -67,11 +67,11 @@ const Footer = () => {
             zIndex: 1,
           },
           '&::before': {
-            animation: 'animateWave 12s linear infinite',
+            animation: 'animateWave 10s linear infinite',
             opacity: 1,
           },
           '&::after': {
-            animation: 'animateWave 10s linear infinite reverse',
+            animation: 'animateWave 8s linear infinite reverse',
             opacity: 0.7,
           },
           '@keyframes animateWave': {

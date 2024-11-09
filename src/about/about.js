@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Container, Grid, Typography, Paper } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +7,38 @@ import NavBar from '../NavBar/Bar';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 const About = () => {
+
+    const [hoveredIndex, setHoveredIndex] = useState(null);
+
+    const features = [
+        {
+            icon: faPencilAlt,
+            title: "Custom Software Development",
+            content: "We create solutions from scratch, tailored to your specific business requirements, using the latest technology stacks."
+        },
+        {
+            icon: faAngellist,
+            title: "Web and Mobile Applications",
+            content: "Our team designs and develops seamless web and mobile applications that deliver exceptional user experiences."
+        },
+        {
+            icon: faPaperPlane,
+            title: "Enterprise Solutions",
+            content: "We build scalable and secure enterprise-grade software that helps organizations operate more efficiently."
+        },
+        {
+            icon: faPaperPlane,
+            title: "Cloud Solutions",
+            content: "Leverage our cloud solutions to boost flexibility and accessibility while ensuring secure data storage and management."
+        },
+        {
+            icon: faPaperPlane,
+            title: "Consulting and Support",
+            content: "Our experts offer consulting services and ongoing support to ensure your technology is optimized and future-ready."
+        }
+    ];
+
+
 
     useEffect(() => {
         AOS.init({ duration: 1500 });
@@ -118,8 +150,53 @@ const About = () => {
                         </Box>
                     </Typography>
                 </Box>
-
-                <Grid container spacing={3} mt={5} data-aos="fade-down">
+                <Grid container spacing={3} mt={5} data-aos="fade-up">
+                    {features.map((feature, index) => (
+                        <Grid item xs={12} md={4} key={index}>
+                            <Paper
+                                elevation={3}
+                                onMouseEnter={() => setHoveredIndex(index)}
+                                onMouseLeave={() => setHoveredIndex(null)}
+                                sx={{
+                                    p: 4,
+                                    textAlign: 'center',
+                                    flexGrow: 1,
+                                    opacity: hoveredIndex === null || hoveredIndex === index ? 1 : 0.5,
+                                    transition: 'transform 0.3s, box-shadow 0.3s, opacity 0.3s',
+                                    '&:hover': {
+                                        transform: 'scale(1.05)',
+                                        boxShadow: 6,
+                                    },
+                                }}
+                            >
+                                <Box
+                                    sx={{
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        bgcolor: '#fff',
+                                        boxShadow: '0 8px 20px -2px rgba(158, 152, 153, 0.5)',
+                                        color: '#1976d2',
+                                        fontSize: '22px',
+                                        height: 65,
+                                        width: 65,
+                                        borderRadius: '50%',
+                                        mb: 2,
+                                    }}
+                                >
+                                    <FontAwesomeIcon icon={feature.icon} />
+                                </Box>
+                                <Typography variant="h6" fontWeight="bold" color="text.primary">
+                                    {feature.title}
+                                </Typography>
+                                <Typography color="textSecondary" mt={2}>
+                                    {feature.content}
+                                </Typography>
+                            </Paper>
+                        </Grid>
+                    ))}
+                </Grid>
+                {/* <Grid container spacing={3} mt={5} data-aos="fade-up">
                     {[
                         {
                             icon: faPencilAlt,
@@ -187,7 +264,7 @@ const About = () => {
                             </Paper>
                         </Grid>
                     ))}
-                </Grid>
+                </Grid> */}
 
             </Container>
         </Box>

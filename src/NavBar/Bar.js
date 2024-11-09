@@ -48,7 +48,15 @@ function NavBar(props) {
 
   return (
     <ShowOnScroll {...props}>
-      <AppBar position="fixed" sx={{ backgroundColor: '#1976d2', boxShadow: 'none' }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+      <AppBar position="fixed" sx={{
+         backgroundColor: '#1976d2',
+         borderRadius: '16px',  // Rounded corners
+         maxWidth: '800px',     // Centered width
+         boxShadow: 'none',
+         left: '50%',
+         transform: 'translateX(-50%)', 
+          }}>
         {/* <Container maxWidth="xl"> */}
         <Toolbar disableGutters>
           <Box
@@ -60,6 +68,7 @@ function NavBar(props) {
               height: 'auto',
               marginRight: '40px',
               marginLeft:'40px',
+              
             }}
           />
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -122,6 +131,7 @@ function NavBar(props) {
         </Toolbar>
         {/* </Container> */}
       </AppBar>
+      </Box>
     </ShowOnScroll>
   );
 }
